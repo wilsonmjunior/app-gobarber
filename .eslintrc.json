@@ -37,7 +37,9 @@
       "extensions": [".tsx"]
     }],
     "react/jsx-props-no-spreading": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
     "import/prefer-default-export": "off",
+    "no-unused-expressions": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
