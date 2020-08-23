@@ -63,6 +63,7 @@ const SignUp: React.FC = () => {
 
         navigation.goBack();
       } catch (err) {
+        console.log('Error', err);
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationError(err);
           formRef.current?.setErrors(errors);
@@ -86,7 +87,10 @@ const SignUp: React.FC = () => {
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         enabled
       >
-        <ScrollView>
+        <ScrollView
+          keyboardShouldPersistTaps="handled"
+          contentContainerStyle={{ flex: 1 }}
+        >
           <Container>
             <Image source={logoImg} />
 

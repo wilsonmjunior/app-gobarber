@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useCallback, useRef, useEffect } from 'react';
 import {
   Image,
   ScrollView,
@@ -38,6 +38,12 @@ interface SignInFormData {
   password: string;
 }
 
+const teste = [ 
+  { id: 1, name: 'Pedro'}, 
+  { id: 2, name: 'Antonio' }, 
+  { id: 3, name: 'Joao'} 
+]
+
 const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const passwordInputRef = useRef<TextInput>(null);
@@ -45,6 +51,16 @@ const SignIn: React.FC = () => {
   const navigation = useNavigation();
 
   const { signIn, user } = useAuth();
+
+  useEffect(() => {
+    // const find = teste.map((item, index) => {
+    //   if(index === 1) {
+    //     return item;
+    //   }
+    // })
+    
+    console.log('Bunda', teste[0]);
+  }, [])
 
   const handleSignIn = useCallback(
     async (data: SignInFormData) => {

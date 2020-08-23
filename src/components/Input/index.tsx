@@ -14,18 +14,18 @@ import { Container, TextInput, Icon } from './styles';
 interface InputProps extends TextInputProperties {
   name: string;
   icon: string;
+  containerStyle?: {};
 }
 
 interface InputValueReference {
   value: string;
 }
-
 interface InputRef {
   focus(): void;
 }
 // Quando for preciso passar a referencia 'ref'
 const Input: React.RefForwardingComponent<InputRef, InputProps> = (
-  { name, icon, ...rest },
+  { name, icon, containerStyle = {}, ...rest },
   ref,
 ) => {
   // Preencher de forma dinamica o campo 'unform'
@@ -70,7 +70,7 @@ const Input: React.RefForwardingComponent<InputRef, InputProps> = (
   }, [fieldName, registerField]);
 
   return (
-    <Container isFocused={isFocused} isErrored={!!error}>
+    <Container style={containerStyle} isFocused={isFocused} isErrored={!!error}>
       <Icon
         name={icon}
         size={20}

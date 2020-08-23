@@ -1,7 +1,7 @@
 {
   "env": {
-    "browser": true,
-    "es6": true
+    "es6": true,
+    "browser": true
   },
   "extends": [
     "plugin:react/recommended",
@@ -30,16 +30,25 @@
     "prettier"
   ],
   "rules": {
+    "prettier/prettier": "error",
+    "no-useless-return": "off",
     "react/prop-types": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "react/jsx-filename-extension": [1, {
-      "extensions": [".tsx"]
-    }],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".tsx"
+        ]
+      }
+    ],
     "react/jsx-props-no-spreading": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
-    "import/prefer-default-export": "off",
+    "@typescript-eslint/camelcase": "off",
     "no-unused-expressions": "off",
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -47,8 +56,7 @@
         "ts": "never",
         "tsx": "never"
       }
-    ],
-    "prettier/prettier": "error"
+    ]
   },
   "settings": {
     "import/resolver": {
