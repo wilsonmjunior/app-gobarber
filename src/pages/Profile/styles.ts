@@ -1,4 +1,4 @@
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
 import { Platform } from 'react-native';
 
 export const Container = styled.View`
@@ -27,9 +27,16 @@ export const Title = styled.Text`
   font-family: 'RobotoSlab-Medium';
 `;
 
-export const UserAvatar = styled.Image`
+interface UserAvatarProps {
+  isImage: boolean;
+}
+
+export const UserAvatar = styled.Image<UserAvatarProps>`
   width: 186px;
   height: 186px;
   border-radius: 98px;
   align-self: center;
+  ${props => !props.isImage && css`
+    background: #f4ede8;
+  `}
 `;

@@ -4,8 +4,6 @@ import React from 'react';
 import { View, StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 
-import './sentry';
-
 import Routes from './routes';
 import AppProvider from './hooks';
 

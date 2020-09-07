@@ -173,8 +173,8 @@ const Profile = () => {
             <Icon name="chevron-left" size={24} color="#999591" />
           </BackButton>
 
-          <UserAvatarButton onPress={handleUpdateAvatar}>
-            <UserAvatar source={{ uri: user.avatar_url }} />
+          <UserAvatarButton onPress={handleUpdateAvatar} >
+            <UserAvatar source={{ uri: user.avatar_url }} isImage={!!user.avatar_url}/>
           </UserAvatarButton>
 
           <ContentView>

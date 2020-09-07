@@ -1,9 +1,14 @@
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import { Platform, FlatList } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 
 import { Provider } from './index';
+
+
+interface AvatarProps {
+  isImage: boolean;
+}
 
 export const Container = styled.View`
   flex: 1;
@@ -33,10 +38,13 @@ export const UserName = styled.Text`
 
 export const ProfileButton = styled.TouchableOpacity``;
 
-export const UserAvatar = styled.Image`
+export const UserAvatar = styled.Image<AvatarProps>`
   width: 56px;
   height: 56px;
   border-radius: 28px;
+  ${props => !props.isImage && css`
+    background: #f4ede8;
+  `}
 `;
 
 export const ProvidersList = styled(FlatList as new () => FlatList<Provider>)`
@@ -59,10 +67,14 @@ export const ProviderContainer = styled(RectButton)`
   align-items: center;
 `;
 
-export const ProviderAvatar = styled.Image`
+export const ProviderAvatar = styled.Image<AvatarProps>`
   width: 72px;
   height: 72px;
   border-radius: 36px;
+
+  ${props => !props.isImage && css`
+    background: #f4ede8;
+  `}
 `;
 
 export const ProviderInfo = styled.View`
