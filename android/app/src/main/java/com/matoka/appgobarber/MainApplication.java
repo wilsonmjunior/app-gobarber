@@ -1,4 +1,4 @@
-package com.appgobarber;
+package com.matoka.appgobarber;
 
 import android.app.Application;
 import android.content.Context;
